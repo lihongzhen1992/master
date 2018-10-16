@@ -1,5 +1,6 @@
 <template>
     <div class="bg">
+      <p class="name">HR管理系统</p>
       <el-card class="box-card">
         <el-input v-model="companyName" placeholder="公司名"></el-input>
         <el-input v-model="phoneNumber" placeholder="手机号"></el-input>
@@ -75,6 +76,14 @@
     position: absolute;
     background: url(./background-pc.jpg) no-repeat top center!important;
     background-size: cover!important;
+    .name{
+      width: 118px;
+      margin: 0 auto;
+      position: relative;
+      top: 20%;
+      color:#fff;
+      font-size:20px;
+    }
     .box-card{
       width: 360px;
       margin: 0 auto;

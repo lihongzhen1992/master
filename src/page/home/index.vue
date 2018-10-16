@@ -47,6 +47,11 @@
   }
   .main{
     float: left;
+    width :100%;
+    min-height :600px;
     display: inline-block;
+    background-color #fff;
+    margin :10px;
+    padding :10px;
   }
 </style>

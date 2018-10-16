@@ -20,6 +20,7 @@ body {
   width: 100% !important;
   height: 100%;
   line-height: 1.6;
+  background-color: #f3f3f4;
 }
 ul li {
   list-style:none;
@@ -78,4 +79,9 @@ p li, ul li, ol li {
 a {
   color: #1ab394;
   text-decoration: none;
+}
+.el-button--primary{
+  color: #fff!important;
+  background-color: #19AA8D!important;
+  border-color: #19AA8D!important;
 }

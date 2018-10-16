@@ -38,7 +38,7 @@
     z-index: -1;
     top: 0;
     right: 0;
-    background-color: #f3f3f4;
+    background-color: #fff;
     margin-top: 0;
     .right{
       float: right!important;
