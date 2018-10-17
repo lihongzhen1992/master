@@ -40,6 +40,7 @@
     right: 0;
     background-color: #fff;
     margin-top: 0;
+    border-bottom: 2px solid #e7eaec;
     .right{
       float: right!important;
       margin-right :15px;

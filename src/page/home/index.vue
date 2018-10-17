@@ -47,7 +47,9 @@
   }
   .main{
     float: left;
-    width :100%;
+    width:-moz-calc(100% - 220px);
+    width:-webkit-calc(100% - 220px);
+    width: calc(100% - 220px);
     min-height :600px;
     display: inline-block;
     background-color #fff;
