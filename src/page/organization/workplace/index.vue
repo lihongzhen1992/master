@@ -1,6 +1,6 @@
 <template>
     <div>
-      <el-button type="primary" size="mini">新增</el-button>
+      <el-button type="primary" size="mini" @click="add">新增</el-button>
       <el-button type="primary" size="mini">导入</el-button>
       <el-button type="primary" size="mini">导出</el-button>
       <el-table
@@ -15,38 +15,58 @@
           :label="title.label"
           :width="title.width"
           align="center">
-          <template  scope="scope" v-if="title.label=='操作'">
-          <el-button
-            size="mini"
-            v-for="(item,i) in scope.row.operation"
-            :key="i"
-            :type="item.type">{{item.name}}</el-button>
+        </el-table-column>
+        <el-table-column
+          label="操作"
+          align="center">
+          <template  scope="scope">
+            <el-button type="primary" size="mini">编辑</el-button>
+            <el-button type="danger" size="mini">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
+      <addPlace :addShow="addShow" :title="title" @dialogClose="dialogClose" @submit="submit"></addPlace>
     </div>
 </template>
 
 <script>
+  import addPlace from './addPlace'
     export default {
         name: "index",
       data(){
           return{
             tableData:[
-              {name:'深圳',country:'中国',city:'深圳',address:'福田',type:'注册地址',describe:'描述1',operation:[{name:'编辑',type:'primary'},{name:'删除',type:'danger'}]}
+              {name:'深圳',country:'中国',city:'深圳',address:'福田',type:'注册地址',describe:'描述1'}
             ],
             tableDataTitle:[
-              {type:'selection',width:55},
-              {prop:'name',label:'名称',width:120},
-              {prop:'country',label:'国家/地区',width:120},
+              {type:'selection',width:60},
+              {prop:'name',label:'名称',width:180},
+              {prop:'country',label:'国家/地区',width:180},
               {prop:'city',label:'城市',width:120},
               {prop:'address',label:'详细地址',width:180},
               {prop:'type',label:'类型',width:180},
               {prop:'describe',label:'描述',width:180},
-              {label:'操作',width:180},
-            ]
+            ],
+            addShow:false,
+            title:'',
           }
       },
+      methods:{
+          add(){
+            this.title = '新增';
+            this.addShow = true;
+          },
+          dialogClose(){
+            this.addShow = false;
+          },
+        submit(data){
+            console.log(data)
+            this.tableData.push(data);
+        }
+      },
+      components:{
+        addPlace
+      }
     }
 </script>
 
